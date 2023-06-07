@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import img from '../assets/login.jpg'
 import { AuthContext } from "../Provider/AuthProvider";
+import GoogleLogin from "../Pages/Shared/GoogleLogin";
 
 const SignUp = () => {
     const [error, setError] = useState('');
@@ -18,7 +19,6 @@ const SignUp = () => {
             setError("Both password should be same");
             return;
         }
-        
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
@@ -117,7 +117,7 @@ const SignUp = () => {
                             <p className='text-error pb-5 text-center'>{error}</p>
                             <p><small>Already have an account?  <NavLink to="/login"><span className="text-warning underline">Login</span></NavLink></small></p>
                         </form>
-                        
+                        <GoogleLogin></GoogleLogin>
                     </div>
                 </div>
             </div>

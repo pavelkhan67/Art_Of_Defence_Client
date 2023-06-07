@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../Provider/AuthProvider';
 import img from "../assets/login.jpg"
+import GoogleLogin from '../Pages/Shared/GoogleLogin';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -68,7 +69,7 @@ const Login = () => {
                             </div>
                             <p><small>New to Art Of Defense? <NavLink to="/signup"><span className='text-warning underline'>Register</span></NavLink> </small></p>
                         </form>
-
+                        <GoogleLogin></GoogleLogin>
                     </div>
 
                 </div>

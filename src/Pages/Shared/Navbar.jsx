@@ -6,7 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const {isAdmin} = false;
+    const { isAdmin } = false;
     // const [cart] = useCart();
 
     const handleLogOut = () => {
@@ -27,21 +27,20 @@ const Navbar = () => {
 
     const navOptions = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/contact">Contact Us</NavLink></li>
         <li><NavLink to="/classes">Classes</NavLink></li>
         <li><NavLink to="/teacher">Instructors</NavLink></li>
         {
-            isAdmin ? <li><Link to="/dashboard/adminhome">Dashboard</Link></li> : 
-            <li><Link to="/dashboard/userhome">Dashboard</Link></li>
+            user ? <li><Link to="/dashboard">Dashboard</Link></li> : ""
         }
 
-        <Link to="/dashboard/mycart">
+        {/* <Link to="/dashboard/mycart">
             <button className="btn btn-outline btn-warning gap-2">
                 <FaCartPlus></FaCartPlus>
                 <div className="badge badge-warning">+{10 || 0}</div>
             </button>
-        </Link>
+        </Link> */}
 
+        <li><NavLink to="/contact">Contact Us</NavLink></li>
     </>
 
     return (
@@ -70,8 +69,13 @@ const Navbar = () => {
                     {
                         user ? <>
                             <div className="tooltip tooltip-left" data-tip={user?.displayName}>
-                                <button onClick={handleLogOut} className='btn btn-warning btn-outline  normal-case text-base'><span className='text-white'>Log Out</span></button>
+                                <button><label className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full" >
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </label></button>
                             </div>
+                            <button onClick={handleLogOut} className='btn btn-warning btn-outline  normal-case text-base'><span className='text-white'>Log Out</span></button>
 
                         </> : <> <NavLink to="/login"><button className='btn btn-warning btn-outline  normal-case text-base'><span className='text-white'>Login</span></button></NavLink> </>
                     }
