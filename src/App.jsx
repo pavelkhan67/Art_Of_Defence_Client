@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Helmet } from 'react-helmet-async'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,13 +18,6 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <button className="btn btn-active">Default</button>
-<button className="btn btn-active btn-neutral">Neutral</button>
-<button className="btn btn-active btn-primary">Primary</button>
-<button className="btn btn-active btn-secondary">Secondary</button>
-<button className="btn btn-active btn-accent">Accent</button>
-<button className="btn btn-active btn-ghost">Ghost</button>
-<button className="btn btn-active btn-link">Link</button>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
