@@ -1,0 +1,92 @@
+[
+    {
+      "ClassName": "Karate",
+      "ClassImage": "https://img.freepik.com/premium-vector/cute-little-karate-kid-boy-showing-hand-attack-techniques-poses-martial-art-training-practice_535862-459.jpg",
+      "InstructorName": "Sensei Hiroshi",
+      "InstructorEmail": "sensei.hiroshi@example.com",
+      "AvailableSeats": 20,
+      "TotalStudents": 40,
+      "Price": 80.00
+    },
+    {
+      "ClassName": "Taekwondo",
+      "ClassImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuPqZIW66_y_fmpPgJ7XgAvJaQy06psxXSpd-PIXidXDDW4KTrd8WyvgO_HBYa2X72qec&usqp=CAU",
+      "InstructorName": "Master Lee",
+      "InstructorEmail": "master.lee@example.com",
+      "AvailableSeats": 25,
+      "TotalStudents": 35,
+      "Price": 75.00
+    },
+    {
+      "ClassName": "Judo",
+      "ClassImage": "https://t4.ftcdn.net/jpg/00/64/18/45/360_F_64184503_wqdyqEy8YpwOEj3X8xqiyBNThCYMaRCM.jpg",
+      "InstructorName": "Sensei Yamamoto",
+      "InstructorEmail": "sensei.yamamoto@example.com",
+      "AvailableSeats": 15,
+      "TotalStudents": 40,
+      "Price": 100.00
+    },
+    {
+      "ClassName": "Brazilian Jiu-Jitsu",
+      "ClassImage": "https://assets.nodokter.com/wp-content/uploads/2021/01/BJJ.jpg",
+      "InstructorName": "Professor Silva",
+      "InstructorEmail": "prof.silva@example.com",
+      "AvailableSeats": 20,
+      "TotalStudents": 38,
+      "Price": 60.00
+    },
+    {
+      "ClassName": "Muay Thai",
+      "ClassImage": "https://as2.ftcdn.net/v2/jpg/01/81/91/83/500_F_181918364_y1LWOTJfifHeHusVZkV6XlWanMBDBgZ0.jpg",
+      "InstructorName": "Kru Phan",
+      "InstructorEmail": "kru.phan@example.com",
+      "AvailableSeats": 0,
+      "TotalStudents": 30,
+      "Price": 90.00
+    },
+    {
+      "ClassName": "Muay Thai",
+      "ClassImage": "https://en.pimg.jp/049/828/420/1/49828420.jpg",
+      "InstructorName": "Kru Phan",
+      "InstructorEmail": "kru.phan@example.com",
+      "AvailableSeats": 25,
+      "TotalStudents": 42,
+      "Price": 90.00
+    },
+    {
+      "ClassName": "Muay Thai",
+      "ClassImage": "https://t4.ftcdn.net/jpg/01/44/84/39/360_F_144843983_iLFycIoUAfPX2BlEJ9gjrvQb1OlpLqEu.jpg",
+      "InstructorName": "Kru Phan",
+      "InstructorEmail": "kru.phan@example.com",
+      "AvailableSeats": 0,
+      "TotalStudents": 30,
+      "Price": 90.00
+    },
+    {
+      "ClassName": "Muay Thai",
+      "ClassImage": "https://en.pimg.jp/049/828/420/1/49828420.jpg",
+      "InstructorName": "Kru Phan",
+      "InstructorEmail": "kru.phan@example.com",
+      "AvailableSeats": 25,
+      "TotalStudents": 42,
+      "Price": 90.00
+    },
+    {
+      "ClassName": "Muay Thai",
+      "ClassImage": "https://t4.ftcdn.net/jpg/03/17/56/35/360_F_317563528_ELxRNTGeuVCgOAsWUZVSBe7uMu0LFTEK.jpg",
+      "InstructorName": "Kru Phan",
+      "InstructorEmail": "kru.phan@example.com",
+      "AvailableSeats": 0,
+      "TotalStudents": 40,
+      "Price": 90.00
+    },
+    {
+      "ClassName": "Kung Fu",
+      "ClassImage": "https://thumbs.dreamstime.com/b/chinese-kung-fu-4339758.jpg",
+      "InstructorName": "Sifu Chen",
+      "InstructorEmail": "sifu.chen@example.com",
+      "AvailableSeats": 10,
+      "TotalStudents": 38,
+      "Price": 70.00
+    }
+  ]
