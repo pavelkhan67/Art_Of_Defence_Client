@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAddressBook, FaBars, FaBook, FaCalendar, FaCartPlus, FaEnvelope, FaHome, FaShoppingBag, FaStar, FaUsers, FaUtensils, FaWallet } from 'react-icons/fa';
+import { FaBars,  FaCartPlus, FaCheckSquare, FaEnvelope, FaHome, FaNewspaper, FaPlusSquare, FaTasks, FaUsers } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import useSelected from '../../hooks/useSelected';
 // import useAdmin from '../../hooks/useAdmin';
@@ -7,6 +7,7 @@ import useSelected from '../../hooks/useSelected';
 const Dashboard = () => {
     const [classes] = useSelected();
     const isAdmin = false;
+    const isIns = false;
 
     return (
         <div className="drawer lg:drawer-open">
@@ -18,30 +19,27 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 bg-warning text-base-content">
+                <ul className="menu p-4 w-80 bg-warning text-base-content h-full">
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
-                            <li><NavLink to="/dashboard/additem"> <FaUtensils></FaUtensils> Add A Item</NavLink></li>
-                            <li><NavLink to="/dashboard/manageitem"><FaWallet></FaWallet> Manage Items</NavLink></li>
-                            <li><NavLink to="/dashboard/history"><FaBook></FaBook> Manage Bookings</NavLink></li>
-                            <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
-
-                        </> : <>
-                            <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> User Home</NavLink></li>
-                            <li><NavLink to="/dashboard/reservation"><FaCalendar></FaCalendar> Reservation</NavLink></li>
-                            <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment History</NavLink></li>
+                            <li><NavLink to="/dashboard/manageclass"><FaTasks></FaTasks> Manage Class</NavLink></li>
+                            <li><NavLink to="/dashboard/manageuser"><FaUsers></FaUsers> Manage User</NavLink></li>
+                        </> : isIns ? <>
+                            <li><NavLink to="/dashboard/addclass"><FaPlusSquare></FaPlusSquare> Add a Class</NavLink></li>
+                            <li><NavLink to="/dashboard/myclass"><FaNewspaper></FaNewspaper> My Classes</NavLink></li>
+                        </> :
+                        <>
+                            <li><NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Selected Class</NavLink></li>
                             <li>
-                                <NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Cart <span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink>
+                                <NavLink to="/dashboard/myenrolled"><FaCheckSquare></FaCheckSquare> My Enrolled Class <span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink>
                             </li>
-                            <li><NavLink to="/dashboard/myreview"><FaStar></FaStar> Add Review</NavLink></li>
-                            <li><NavLink to="/dashboard/mybookings"><FaBook></FaBook> My Bookings</NavLink></li>
-                        </>
+
+                    </>
                     }
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-                    <li><NavLink to="/menu"><FaBars></FaBars> Menu</NavLink></li>
-                    <li><NavLink to="/order/salad"><FaShoppingBag></FaShoppingBag> Shop</NavLink></li>
+                    <li><NavLink to="/classes"><FaNewspaper></FaNewspaper> Classes</NavLink></li>
+                    <li><NavLink to="/instructors"><FaUsers></FaUsers> Instructors</NavLink></li>
                     <li><NavLink to="/contact"><FaEnvelope></FaEnvelope> Contact</NavLink></li>
                 </ul>
 
