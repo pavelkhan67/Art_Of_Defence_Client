@@ -1,13 +1,20 @@
-import useClass from "../../../hooks/useClass";
+
+import { useQuery } from "@tanstack/react-query";
 import Class from "./Class";
 
 const PopularClass = () => {
 
-    const [classes] = useClass();
+    const {data: classes = [], isLoading: loading, refetch} = useQuery({
+        queryKey: ['classes'],
+        queryFn: async() => {
+            const res = await fetch('http://localhost:5000/class');
+            return res.json();
+        }
+    })
     const popularClasses = classes;
 
     return (
-        <section className="mb-20">
+        <section className="mb-10">
             <p className="text-center text-5xl py-10 font-semibold">Popular Classes</p>
             
             <div className="grid md:grid-cols-2 gap-10">
