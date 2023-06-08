@@ -4,6 +4,7 @@ import { useState } from "react";
 import './CheckoutForm.css'
 import { AuthContext } from "../../../Provider/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const CheckoutForm = ({ cart, price }) => {
     const stripe = useStripe();
@@ -82,13 +83,19 @@ const CheckoutForm = ({ cart, price }) => {
                 price,
                 date: new Date(),
                 name: cart.ClassName,
+                image: cart.ClassImage,
                 status: 'service pending',
             }
             axiosSecure.post('/payment', payment)
                 .then(res => {
                     console.log(res.data);
-                    if (res.data.insertedId) {
-                        // display confirm
+                    if (res.data.insertResult) {
+                        
+                        Swal.fire(
+                            'Payment Success!',
+                            `Your Payment For ${cart.ClassName} is Success.`,
+                            'success'
+                        )
                     }
                 })
         }

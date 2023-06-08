@@ -13,6 +13,7 @@ import AdminRoute from "./AdminRoute";
 import MySelected from "../Pages/Dashboard/MySelected/MySelected";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import MyEnrolled from "../Pages/Dashboard/MyEnrolled/MyEnrolled";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
           {
             path: 'myselected',
             element: <MySelected></MySelected>
+          },
+          {
+            path: 'myenrolled',
+            element: <MyEnrolled></MyEnrolled>
           },
           {
             path: 'payment/:id',

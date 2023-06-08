@@ -4,7 +4,6 @@ import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import useSelected from '../../../hooks/useSelected';
-import Payment from '../Payment/Payment';
 
 const MySelected = () => {
     const [classes, refetch] = useSelected();

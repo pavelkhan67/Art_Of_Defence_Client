@@ -34,7 +34,7 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/myclass"><FaNewspaper></FaNewspaper> My Classes</NavLink></li>
                         </> :
                         <>
-                            <li><NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Selected Class <span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink></li>
+                            <li><NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Selected Class</NavLink></li>
                             <li>
                                 <NavLink to="/dashboard/myenrolled"><FaCheckSquare></FaCheckSquare> My Enrolled Class</NavLink>
                             </li>
