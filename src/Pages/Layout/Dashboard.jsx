@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBars,  FaCartPlus, FaCheckSquare, FaEnvelope, FaHome, FaNewspaper, FaPlusSquare, FaTasks, FaUsers } from 'react-icons/fa';
+import { FaBars,  FaCartPlus, FaCheckSquare, FaEnvelope, FaHome, FaNewspaper, FaPlusSquare, FaTasks, FaUsers, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import useSelected from '../../hooks/useSelected';
 // import useAdmin from '../../hooks/useAdmin';
@@ -29,10 +29,11 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/myclass"><FaNewspaper></FaNewspaper> My Classes</NavLink></li>
                         </> :
                         <>
-                            <li><NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Selected Class</NavLink></li>
+                            <li><NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Selected Class <span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink></li>
                             <li>
-                                <NavLink to="/dashboard/myenrolled"><FaCheckSquare></FaCheckSquare> My Enrolled Class <span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink>
+                                <NavLink to="/dashboard/myenrolled"><FaCheckSquare></FaCheckSquare> My Enrolled Class</NavLink>
                             </li>
+                            <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment</NavLink></li>
 
                     </>
                     }
