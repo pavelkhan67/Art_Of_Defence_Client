@@ -1,9 +1,15 @@
 import React from 'react';
-import useInstructor from '../../hooks/useInstructor';
 import Instructor from "./Instructor"
+import { useQuery } from '@tanstack/react-query';
 
 const Instructors = () => {
-    const [ instructors ] = useInstructor();
+    const {data: instructors = [], isLoading: loading, refetch} = useQuery({
+        queryKey: ['instructors'],
+        queryFn: async() => {
+            const res = await fetch('http://localhost:5000/instructors');
+            return res.json();
+        }
+    })
     const AllInstructor = instructors;
     return (
         <div>

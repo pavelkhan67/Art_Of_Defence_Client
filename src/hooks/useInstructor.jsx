@@ -1,16 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "./useAxiosSecure";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+
 
 const useInstructor = () => {
-
-    const {data: instructors = [], isLoading: loading, refetch} = useQuery({
-        queryKey: ['instructors'],
-        queryFn: async() => {
-            const res = await fetch('http://localhost:5000/instructors');
-            return res.json();
+    const {user} = useContext(AuthContext);
+    const [axiosSecure] = useAxiosSecure();
+    // use axios secure with react query
+    const {data: isInstructor, isLoading: isInstructorLoading} = useQuery({
+        queryKey: ['isInstructor', user?.email],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/users/instructor/${user?.email}`);
+            return res.data.instructor;
         }
     })
-
-    return [instructors, loading, refetch]
+    return [isInstructor, isInstructorLoading]
 }
-
 export default useInstructor;

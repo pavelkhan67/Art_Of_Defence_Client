@@ -7,9 +7,8 @@ import useSelected from '../../hooks/useSelected';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const  isAdmin  = false;
-    const  isIns  = false;
     const [classes] = useSelected();
+
 
     const handleLogOut = () => {
         logOut()
@@ -32,17 +31,18 @@ const Navbar = () => {
         <li><NavLink to="/classes">Classes</NavLink></li>
         <li><NavLink to="/instructors">Instructors</NavLink></li>
         {
-            isAdmin ? <li><Link to="/dashboard/manageclass">Dashboard</Link></li> : isIns ?
-            <li><Link to="/dashboard/addclass">Dashboard</Link></li> : <li><Link to="/dashboard/myselected">Dashboard</Link></li>
-        }
-        
+            user ? <li><Link to="/dashboard">Dashboard</Link></li> : ''
+        }       
 
-        <Link to="/dashboard/myselected">
+        {
+            user ? <Link to="/dashboard/myselected">
             <button className="btn btn-outline btn-warning gap-2">
                 <FaCartPlus></FaCartPlus>
                 <div className="badge badge-warning">+{classes?.length || 0}</div>
             </button>
-        </Link>
+        </Link> : ''
+
+        }
 
         <li><NavLink to="/contact">Contact Us</NavLink></li>
     </>

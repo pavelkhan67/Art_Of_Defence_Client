@@ -1,19 +1,25 @@
-import React from 'react';
-import { FaBars,  FaCartPlus, FaCheckSquare, FaEnvelope, FaHome, FaNewspaper, FaPlusSquare, FaTasks, FaUsers, FaWallet } from 'react-icons/fa';
-import { NavLink, Outlet } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { FaCartPlus, FaCheckSquare, FaEnvelope, FaHome, FaNewspaper, FaPlusSquare, FaTasks, FaUsers, FaWallet } from 'react-icons/fa';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import useSelected from '../../hooks/useSelected';
-// import useAdmin from '../../hooks/useAdmin';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 const Dashboard = () => {
     const [classes] = useSelected();
-    const isAdmin = false;
-    const isIns = false;
-
+    const location = useLocation();
+   
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+    
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center mt-10">
             <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+            {
+                location.pathname === '/dashboard' ? <p className='text-2xl font-bold'>Please Select a Route</p> : ''
+            }
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
@@ -22,8 +28,8 @@ const Dashboard = () => {
                     {
                         isAdmin ? <>
                             <li><NavLink to="/dashboard/manageclass"><FaTasks></FaTasks> Manage Class</NavLink></li>
-                            <li><NavLink to="/dashboard/manageuser"><FaUsers></FaUsers> Manage User</NavLink></li>
-                        </> : isIns ? <>
+                            <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> Manage User</NavLink></li>
+                        </> : isInstructor ? <>
                             <li><NavLink to="/dashboard/addclass"><FaPlusSquare></FaPlusSquare> Add a Class</NavLink></li>
                             <li><NavLink to="/dashboard/myclass"><FaNewspaper></FaNewspaper> My Classes</NavLink></li>
                         </> :

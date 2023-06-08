@@ -92,8 +92,6 @@ const CheckoutForm = ({ cart, price }) => {
                     }
                 })
         }
-
-
     }
 
     return (

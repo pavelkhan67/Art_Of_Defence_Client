@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import MySelected from "../Pages/Dashboard/MySelected/MySelected";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
           {
             path: 'payment/:id',
             element: <Payment></Payment>
+          },
+          {
+            path:"allusers",
+            element: <AllUsers></AllUsers>
           }
   
         ]
