@@ -5,7 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 const useSelected = () => {
     const { user, loading } = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
-    const { refetch, data: cart = [] } = useQuery({
+    const { refetch, data: classes = [] } = useQuery({
         queryKey: ['selected', user?.email],
         enabled: !loading,
         queryFn: async () => {
@@ -15,7 +15,7 @@ const useSelected = () => {
         },
     })
 
-    return [cart, refetch]
+    return [classes, refetch]
 
 }
 export default useSelected;

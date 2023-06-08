@@ -26,7 +26,7 @@ const PopularClass = () => {
                 }
             </div>
             <div className="text-center">
-            <button className="btn btn-outline border-0 border-t-4 border-b-4 mt-8">View All Classes</button>
+            <button className="btn btn-outline border-0 border-r-4 border-b-4 mt-8">View All Classes</button>
             </div>
         </section>
     );
