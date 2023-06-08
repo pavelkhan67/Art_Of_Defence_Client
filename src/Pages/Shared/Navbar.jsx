@@ -3,11 +3,12 @@ import { Link, NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaCartPlus } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useSelected from '../../hooks/useSelected';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const { isAdmin } = false;
-    // const [cart] = useCart();
+    const [classes] = useSelected();
 
     const handleLogOut = () => {
         logOut()
@@ -29,16 +30,15 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/classes">Classes</NavLink></li>
         <li><NavLink to="/instructors">Instructors</NavLink></li>
-        {
-            user ? <li><Link to="/dashboard">Dashboard</Link></li> : ""
-        }
+        <li><NavLink to="/dashboard/myselected">Dash</NavLink></li>
+        
 
-        {/* <Link to="/dashboard/mycart">
+        <Link to="/dashboard/myselected">
             <button className="btn btn-outline btn-warning gap-2">
                 <FaCartPlus></FaCartPlus>
-                <div className="badge badge-warning">+{10 || 0}</div>
+                <div className="badge badge-warning">+{classes?.length || 0}</div>
             </button>
-        </Link> */}
+        </Link>
 
         <li><NavLink to="/contact">Contact Us</NavLink></li>
     </>

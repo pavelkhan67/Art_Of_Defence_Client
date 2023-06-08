@@ -1,19 +1,20 @@
 import React from 'react';
 import { FaAddressBook, FaBars, FaBook, FaCalendar, FaCartPlus, FaEnvelope, FaHome, FaShoppingBag, FaStar, FaUsers, FaUtensils, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
-import useAdmin from '../../hooks/useAdmin';
 import useSelected from '../../hooks/useSelected';
+// import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
     const [classes] = useSelected();
-    const [isAdmin] = useAdmin();
+    const isAdmin = false;
 
     return (
-        <div className="drawer drawer-mobile">
+        <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content ">
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+            <div className="drawer-content flex flex-col items-center justify-center">
                 <Outlet></Outlet>
+                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
@@ -31,7 +32,7 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/reservation"><FaCalendar></FaCalendar> Reservation</NavLink></li>
                             <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment History</NavLink></li>
                             <li>
-                                <NavLink to="/dashboard/mycart"><FaCartPlus></FaCartPlus> My Cart <span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink>
+                                <NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Cart <span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink>
                             </li>
                             <li><NavLink to="/dashboard/myreview"><FaStar></FaStar> Add Review</NavLink></li>
                             <li><NavLink to="/dashboard/mybookings"><FaBook></FaBook> My Bookings</NavLink></li>
