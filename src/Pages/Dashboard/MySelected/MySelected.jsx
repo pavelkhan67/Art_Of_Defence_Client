@@ -4,6 +4,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import useSelected from '../../../hooks/useSelected';
+import Payment from '../Payment/Payment';
 
 const MySelected = () => {
     const [classes, refetch] = useSelected();
@@ -11,7 +12,6 @@ const MySelected = () => {
     const Price = parseFloat(total.toFixed(2))
 
     const handleDelete = item => {
-        console.log(item._id);
         Swal.fire({
             title: 'Are you sure?',
             text: `You want to delete ${item.name} ?`,
@@ -85,7 +85,7 @@ const MySelected = () => {
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                                 <td>
-                                    <Link to="/dashboard/payment"><button className="btn btn-warning btn-sm">PAY</button></Link>
+                                    <Link to={`/dashboard/payment/${item._id}`}><button className="btn btn-warning btn-sm">PAY</button></Link>
                                 </td>
                             </tr>)
                         }

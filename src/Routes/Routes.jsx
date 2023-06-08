@@ -11,6 +11,7 @@ import Dashboard from "../Pages/Layout/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import MySelected from "../Pages/Dashboard/MySelected/MySelected";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
           {
             path: 'myselected',
             element: <MySelected></MySelected>
+          },
+          {
+            path: 'payment/:id',
+            element: <Payment></Payment>
           }
   
         ]
