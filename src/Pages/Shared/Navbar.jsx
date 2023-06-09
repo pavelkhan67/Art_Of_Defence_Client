@@ -9,7 +9,6 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [classes] = useSelected();
 
-
     const handleLogOut = () => {
         logOut()
             .then(() => {

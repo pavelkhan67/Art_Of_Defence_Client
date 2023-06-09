@@ -11,11 +11,23 @@ const Payment = () => {
     const location = useLocation();
     const id = location.pathname.split('/')[3]
     // console.log(id);
-    const [classes] = useSelected();
+    const [classes, refetch] = useSelected();
     const SingleClass = classes.find(item => item._id === id);
     const PriceInitial = SingleClass.Price;
     const Price = parseFloat(PriceInitial.toFixed(2))
     // console.log(SingleClass, Price);
+
+    const handlePay = (SingleClass) => {
+        fetch(`http://localhost:5000/selected/${SingleClass._id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            
+                        }
+                    })
+    }
     return (
         <div className="mx-10">
             <Helmet>
@@ -23,7 +35,7 @@ const Payment = () => {
             </Helmet>
             <h2 className="text-3xl font-semibold py-5"> Pay Your Bill To Join Your Desire Class!</h2>
             <Elements stripe={stripePromise}>
-                <CheckoutForm cart={SingleClass} price={Price}></CheckoutForm>
+                <CheckoutForm cart={SingleClass} handlePay= { () => handlePay(SingleClass)} price={Price}></CheckoutForm>
             </Elements>
         </div>
     );

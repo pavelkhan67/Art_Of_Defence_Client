@@ -2,21 +2,20 @@ import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import useEnrolled from '../../../hooks/useEnrolled';
 
-const MyEnrolled = () => {
-
+const PaymentHistory = () => {
     const [enrolled, refetch] = useEnrolled();
-    const EnrolledClass = enrolled;
+    const PaymentHistory = enrolled;
 
     return (
         <div className='h-full w-9/12 mx-auto'>
             <Helmet>
-                <title>Art Of Defense | My Enrolled Class</title>
+                <title>Art Of Defense | My Payment History</title>
             </Helmet>
             <div className='text-center mb-5'>
-                <h2 className='text-4xl font-semibold'>My Enrolled Class</h2>
+                <h2 className='text-4xl font-semibold'>My Payment History</h2>
             </div>
             <div className="uppercase font-semibold py-10">
-                <h3 className="text-xl">Total Classes: {EnrolledClass.length}</h3>
+                <h3 className="text-xl">Total Classes: {PaymentHistory.length}</h3>
             </div>
             <div className="overflow-x-auto w-full pb-10">
                 <table className="table w-full ">
@@ -27,11 +26,12 @@ const MyEnrolled = () => {
                             <th>Class</th>
                             <th>Class Name</th>
                             <th>Price</th>
+                            <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            EnrolledClass.map((item, index) => <tr
+                            PaymentHistory.map((item, index) => <tr
                                 key={item._id}
                             >
                                 <td>
@@ -48,6 +48,7 @@ const MyEnrolled = () => {
                                     {item.name}
                                 </td>
                                 <td>${item.price}</td>
+                                <td>{item.date.split('T')[0]}</td>
                             </tr>)
                         }
                     </tbody>
@@ -57,4 +58,4 @@ const MyEnrolled = () => {
     );
 };
 
-export default MyEnrolled;
+export default PaymentHistory;

@@ -4,9 +4,11 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import useSelected from '../../hooks/useSelected';
 import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
+import useEnrolled from '../../hooks/useEnrolled';
 
 const Dashboard = () => {
     const [classes] = useSelected();
+    const [enrolled] = useEnrolled();
     const location = useLocation();
    
     const [isAdmin] = useAdmin();
@@ -34,11 +36,13 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/myclass"><FaNewspaper></FaNewspaper> My Classes</NavLink></li>
                         </> :
                         <>
-                            <li><NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Selected Class</NavLink></li>
+                            <li><NavLink to="/dashboard/myselected"><FaCartPlus></FaCartPlus> My Selected Class<span className="badge bg-white text-black">+{classes?.length || 0}</span></NavLink></li>
                             <li>
-                                <NavLink to="/dashboard/myenrolled"><FaCheckSquare></FaCheckSquare> My Enrolled Class</NavLink>
+                                <NavLink to="/dashboard/myenrolled"><FaCheckSquare></FaCheckSquare> My Enrolled Class<span className="badge bg-white text-black">{enrolled?.length || 0}</span></NavLink>
                             </li>
-                            <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> Payment</NavLink></li>
+                            <li>
+                                <NavLink to="/dashboard/paymenthistory"><FaWallet></FaWallet> Payment History</NavLink>
+                            </li>
 
                     </>
                     }

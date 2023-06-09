@@ -44,6 +44,9 @@ const MySelected = () => {
             <Helmet>
                 <title>Art Of Defense | My Selected Class</title>
             </Helmet>
+            <div className='text-center mb-5'>
+                <h2 className='text-4xl font-semibold'>My Selected Class</h2>
+            </div>
             <div className="uppercase font-semibold h-[60px] flex justify-between items-center gap-5 py-10">
                 <h3 className="text-xl">Total Classes: {classes.length}</h3>
                 <h3 className="text-xl">Total Price: ${Price}</h3>

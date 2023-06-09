@@ -5,8 +5,9 @@ import './CheckoutForm.css'
 import { AuthContext } from "../../../Provider/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { useQuery } from "@tanstack/react-query";
 
-const CheckoutForm = ({ cart, price }) => {
+const CheckoutForm = ({ cart, handlePay, price }) => {
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -72,7 +73,7 @@ const CheckoutForm = ({ cart, price }) => {
         if (confirmError) {
             console.log(confirmError);
         }
-        console.log('payment intent', paymentIntent)
+        // console.log('payment intent', paymentIntent)
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
@@ -88,8 +89,9 @@ const CheckoutForm = ({ cart, price }) => {
             }
             axiosSecure.post('/payment', payment)
                 .then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if (res.data.insertResult) {
+                        handlePay();
                         
                         Swal.fire(
                             'Payment Success!',
