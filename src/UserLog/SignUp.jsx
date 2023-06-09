@@ -60,7 +60,7 @@ const SignUp = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center ps-10 lg:text-left">
-                        <h1 className="text-5xl text-center pb-10 font-bold">Sign up now!</h1>
+                        <h1 className="text-4xl lg:text-5xl text-center lg:pb-10 font-bold">Sign up now!</h1>
                         <img className="rounded-full" src={img} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

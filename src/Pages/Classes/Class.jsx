@@ -53,7 +53,7 @@ const Class = ({ cla }) => {
 
     return (
         <div className={`card card-compact w-full ${AvailableSeats > 0 ? 'bg-base-200' : 'bg-red-400'} shadow-xl`}>
-            <figure className='px-10 lg:px-20 pt-10'><img className='rounded-xl h-60 w-full' src={ClassImage} alt="Shoes" /></figure>
+            <figure className='px-10 lg:px-20 pt-10'><img className='rounded-xl h-60 w-full' src={ClassImage} alt="Images" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-4xl justify-center py-5">{ClassName}</h2>
                 <div className='flex justify-around'>

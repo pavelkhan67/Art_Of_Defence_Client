@@ -82,8 +82,11 @@ const AllUsers = () => {
             <Helmet>
                 <title>Bistro Boss | Manage users</title>
             </Helmet>
+            <div className='text-center mb-5'>
+                <h2 className='text-4xl font-semibold'>Manage Users</h2>
+            </div>
             <div className="w-full mx-10 mb-5">
-            <h3 className="text-3xl font-semibold my-4">Total Users: {users.length}</h3>
+            <h3 className="text-xl uppercase font-semibold my-4">Total Users: {users.length}</h3>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     {/* head */}

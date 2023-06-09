@@ -21,7 +21,7 @@ const PopularInstructor = () => {
             transition={{ duration: 1 }}
         >
             <section className="mb-10">
-                <p className="text-center text-5xl pb-10 font-semibold">Popular instructors</p>
+                <p className="text-center text-4xl lg:text-5xl pb-10 font-semibold">Popular instructors</p>
 
                 <div className="grid md:grid-cols-2 gap-6">
                     {

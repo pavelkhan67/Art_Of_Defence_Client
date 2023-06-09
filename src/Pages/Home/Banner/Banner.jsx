@@ -18,7 +18,7 @@ const Banner = () => {
                     <img src={img1} className="w-full rounded-lg h-full" />
                     <div className=" absolute rounded-lg h-full flex items-center gap-4 left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                         <div className='text-white space-y-7 w-10/12 lg:w-1/2 pl-16' data-aos="fade-down-right" data-aos-duration="1000">
-                            <h2 className=' text-3xl lg:text-5xl font-bold text-start'>Power is not revealed by striking hard or often, but by striking true</h2>
+                            <h2 className=' text-4xl lg:text-5xl font-bold text-start'>Power is not revealed by striking hard or often, but by striking true</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
                                 <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>
@@ -31,7 +31,7 @@ const Banner = () => {
                     <img src={img2} className="w-full rounded-lg h-full" />
                     <div className=" absolute rounded-lg h-full flex items-center gap-4 left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                         <div className='text-white space-y-7 w-10/12 lg:w-1/2 pl-16' data-aos="fade-down-right" data-aos-duration="1000">
-                            <h2 className=' text-3xl lg:text-5xl font-bold text-start'>When you say “I will” with conviction, magic begins to happen</h2>
+                            <h2 className=' text-4xl lg:text-5xl font-bold text-start'>When you say “I will” with conviction, magic begins to happen</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
                                 <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>
@@ -44,7 +44,7 @@ const Banner = () => {
                     <img src={img3} className="w-full rounded-lg h-full" />
                     <div className=" absolute rounded-lg h-full flex items-center gap-4 left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                         <div className='text-white space-y-7 w-10/12 lg:w-1/2 pl-16' data-aos="fade-down-right" data-aos-duration="1000">
-                            <h2 className=' text-3xl lg:text-5xl font-bold text-start'>What the mind can perceive, the heart can believe, the body can achieve</h2>
+                            <h2 className=' text-4xl lg:text-5xl font-bold text-start'>What the mind can perceive, the heart can believe, the body can achieve</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
                                 <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>
@@ -57,7 +57,7 @@ const Banner = () => {
                     <img src={img4} className="w-full rounded-lg h-full" />
                     <div className=" absolute rounded-lg h-full flex items-center gap-4 left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                         <div className='text-white space-y-7 w-10/12 lg:w-1/2 pl-16' data-aos="fade-down-right" data-aos-duration="1000">
-                            <h2 className=' text-3xl lg:text-5xl font-bold text-start'>Failure is only temporary. Quitting makes it permanent</h2>
+                            <h2 className=' text-4xl lg:text-5xl font-bold text-start'>Failure is only temporary. Quitting makes it permanent</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
                                 <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>

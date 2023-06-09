@@ -44,7 +44,7 @@ const Login = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col md:flex-row">
                     <div className="text-center md:w-1/2 lg:text-left pe-10">
-                        <h1 className="text-5xl text-center pb-10 font-bold">Login now!</h1>
+                        <h1 className="text-4xl lg:text-5xl text-center lg:pb-10 font-bold">Login now!</h1>
                         <img className='rounded-full' src={img} alt="" />
                     </div>
                     <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100 ">

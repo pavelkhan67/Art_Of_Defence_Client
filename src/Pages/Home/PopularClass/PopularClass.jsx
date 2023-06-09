@@ -23,7 +23,7 @@ const PopularClass = () => {
             transition={{ duration: 1 }}
         >
             <section className="mb-10">
-                <p className="text-center text-3xl lg:text-5xl pt-5 pb-10 font-semibold">Popular Classes</p>
+                <p className="text-center text-4xl lg:text-5xl pt-5 pb-10 font-semibold">Popular Classes</p>
 
                 <div className="grid md:grid-cols-2 gap-6">
                     {
