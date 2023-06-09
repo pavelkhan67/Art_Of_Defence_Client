@@ -5,6 +5,7 @@ import useSelected from '../../hooks/useSelected';
 import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
 import useEnrolled from '../../hooks/useEnrolled';
+import { Helmet } from 'react-helmet-async';
 
 const Dashboard = () => {
     const [classes] = useSelected();
@@ -16,6 +17,9 @@ const Dashboard = () => {
     
     return (
         <div className="drawer lg:drawer-open">
+            <Helmet>
+                <title>Art Of Defense | Dashboard</title>
+            </Helmet>
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center mt-10">
             <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>

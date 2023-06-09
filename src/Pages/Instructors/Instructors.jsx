@@ -1,6 +1,7 @@
 import React from 'react';
 import Instructor from "./Instructor"
 import { useQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet-async';
 
 const Instructors = () => {
     const {data: instructors = [], isLoading: loading, refetch} = useQuery({
@@ -13,6 +14,9 @@ const Instructors = () => {
     const AllInstructor = instructors;
     return (
         <div>
+            <Helmet>
+                <title>Art Of Defense | Instructors</title>
+            </Helmet>
             <div className="grid md:grid-cols-2 gap-10 my-10">
                 {
                     AllInstructor.map(person => <Instructor

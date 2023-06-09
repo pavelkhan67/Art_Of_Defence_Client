@@ -68,7 +68,7 @@ const AllUsers = () => {
                             refetch();
                             Swal.fire(
                                 'Deleted!',
-                                'Your order has been deleted.',
+                                `User ${user.name} is deleted!`,
                                 'success'
                             )
                         }
