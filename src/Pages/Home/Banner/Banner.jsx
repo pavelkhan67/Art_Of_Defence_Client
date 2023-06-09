@@ -16,8 +16,8 @@ const Banner = () => {
                             <h2 className='text-5xl font-bold text-start'>Power is not revealed by striking hard or often, but by striking true</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
-                                <button className='btn btn-secondary text-white'>See More</button>
-                                <button className='btn btn-outline text-white'>Book Now</button>
+                                <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>
+                                <button className='btn btn-outline text-white border-0 border-b-4 border-r-4 bg-slate-900'>Book Now</button>
                             </div>
                         </div>
                     </div>
@@ -29,8 +29,8 @@ const Banner = () => {
                             <h2 className='text-5xl font-bold text-start'>When you say “I will” with conviction, magic begins to happen</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
-                                <button className='btn btn-secondary text-white'>See More</button>
-                                <button className='btn btn-outline text-white'>Book Now</button>
+                                <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>
+                                <button className='btn btn-outline text-white border-0 border-b-4 border-r-4 bg-slate-900'>Book Now</button>
                             </div>
                         </div>
                     </div>
@@ -42,8 +42,8 @@ const Banner = () => {
                             <h2 className='text-5xl font-bold text-start'>What the mind can perceive, the heart can believe, the body can achieve</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
-                                <button className='btn btn-secondary text-white'>See More</button>
-                                <button className='btn btn-outline text-white'>Book Now</button>
+                                <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>
+                                <button className='btn btn-outline text-white border-0 border-b-4 border-r-4 bg-slate-900'>Book Now</button>
                             </div>
                         </div>
                     </div>
@@ -55,8 +55,8 @@ const Banner = () => {
                             <h2 className='text-5xl font-bold text-start'>Failure is only temporary. Quitting makes it permanent</h2>
                             <p>Our School will make you a strong person , not only physically but also mentally too!</p>
                             <div className='flex gap-5 '>
-                                <button className='btn btn-secondary text-white'>See More</button>
-                                <button className='btn btn-outline text-white'>Book Now</button>
+                                <button className='btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400'>See More</button>
+                                <button className='btn btn-outline text-white border-0 border-b-4 border-r-4 bg-slate-900'>Book Now</button>
                             </div>
                         </div>
                     </div>

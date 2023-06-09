@@ -52,7 +52,7 @@ const AddClass = () => {
             <Helmet>
                 <title>Art Of Defense | Add a Class</title>
             </Helmet>
-            <h2 className='text-center text-4xl font-semibold pb-6'>Add A Class</h2>
+            <h2 className='text-center text-4xl font-semibold pb-4'>Add A Class</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex my-4'>
                     <div className="form-control w-full ">
@@ -127,7 +127,7 @@ const AddClass = () => {
                     </div>
                 </div>
 
-                <input className="btn btn-warning w-1/3 mx-auto form-control mt-4 mb-2 " type="submit" value="Add Class" />
+                <input className="btn btn-warning w-full lg:w-1/3 mx-auto text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400  form-control mt-8 " type="submit" value="Add Class" />
             </form>
         </div>
     );

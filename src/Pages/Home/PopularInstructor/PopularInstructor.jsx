@@ -14,9 +14,9 @@ const PopularInstructor = () => {
 
     return (
         <section className="mb-10">
-            <p className="text-center text-5xl py-10 font-semibold">Popular instructors</p>
+            <p className="text-center text-5xl pb-10 font-semibold">Popular instructors</p>
             
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2 gap-6">
                 {
                     popularInstructors.map(person => <Instructor
                         key={person._id}
@@ -25,7 +25,7 @@ const PopularInstructor = () => {
                 }
             </div>
             <div className="text-center">
-            <button className="btn btn-outline border-0 border-r-4 border-b-4 mt-8">View All Instructors</button>
+            <button className="btn btn-outline border-0 border-r-4 border-b-4 bg-slate-100 mt-8">View All Instructors</button>
             </div>
         </section>
     );

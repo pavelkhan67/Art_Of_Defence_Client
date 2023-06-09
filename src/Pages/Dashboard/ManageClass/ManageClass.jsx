@@ -111,8 +111,8 @@ const ManageClass = () => {
                                 <td>{item.status}</td>
                                 <td>{ item.status === 'denied' || item.status === 'approved' ? <div className="flex flex-col gap-2"><button disabled={true} className="btn btn-sm normal-case">Approve</button> <button disabled={true} className="btn btn-sm normal-case ">Deny</button></div> : 
                                     <div className=" flex gap-2 flex-col">
-                                        <button onClick={() => handleApprove(item)} className="btn btn-sm normal-case bg-orange-600  text-white">Approve</button>   
-                                        <button onClick={() => handleDeny(item)} className="btn btn-sm normal-case bg-orange-600  text-white">Deny</button>   
+                                        <button onClick={() => handleApprove(item)} className="btn btn-sm btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400">Approve</button>   
+                                        <button onClick={() => handleDeny(item)} className="btn btn-sm btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400">Deny</button>   
                                     </div>
                                     }</td>
                             </tr>)

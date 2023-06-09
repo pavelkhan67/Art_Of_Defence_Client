@@ -107,8 +107,8 @@ const AllUsers = () => {
                                     }</td>
                                 <td>{ user.role === 'admin' || user.role === 'instructor' ? <div className="flex flex-col gap-2"><button disabled={true} className="btn btn-sm normal-case ">Make Admin</button> <button disabled={true} className="btn btn-sm normal-case ">Make Instructor</button></div> : 
                                     <div className=" flex gap-2 flex-col">
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm normal-case bg-orange-600  text-white">Make Admin</button>   
-                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-sm normal-case bg-orange-600  text-white">Make Instructor</button>   
+                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400">Make Admin</button>   
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-sm btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400">Make Instructor</button>   
                                     </div>
                                     }</td>
                                 <td><button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>

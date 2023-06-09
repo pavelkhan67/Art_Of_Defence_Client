@@ -87,7 +87,7 @@ const MySelected = () => {
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                                 <td>
-                                    <Link to={`/dashboard/payment/${item._id}`}><button className="btn btn-warning btn-sm">PAY</button></Link>
+                                    <Link to={`/dashboard/payment/${item._id}`}><button className="btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 px-5 border-orange-400">PAY</button></Link>
                                 </td>
                             </tr>)
                         }
