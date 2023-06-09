@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import img1 from '../../../assets/home/img1.jpg'
 import img2 from '../../../assets/home/img2.jpeg'
 import img3 from '../../../assets/home/img3.webp'
 import img4 from '../../../assets/home/img4.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const Banner = () => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <Carousel className='text-center'>
                 <div className="relative w-full h-[80vh]">

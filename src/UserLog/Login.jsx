@@ -65,9 +65,9 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Login" />
+                                <input className="btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400" type="submit" value="Login" />
                             </div>
-                            <p><small>New to Art Of Defense? <NavLink to="/signup"><span className='text-warning underline'>Register</span></NavLink> </small></p>
+                            <p><small>New to Art Of Defense? <NavLink to="/signup"><span className='text-orange-400 underline'>Register</span></NavLink> </small></p>
                         </form>
                         <GoogleLogin></GoogleLogin>
                     </div>

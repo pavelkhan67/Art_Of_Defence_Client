@@ -12,7 +12,7 @@ const AllUsers = () => {
     })
 
     const handleMakeAdmin = user =>{
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://summer-camp-server-six-mu.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -30,7 +30,7 @@ const AllUsers = () => {
         })
     }
     const handleMakeInstructor = user =>{
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://summer-camp-server-six-mu.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -59,7 +59,7 @@ const AllUsers = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/admin/${user._id}`, {
+                fetch(`https://summer-camp-server-six-mu.vercel.app/users/admin/${user._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -80,9 +80,9 @@ const AllUsers = () => {
     return (
         <div className="h-full w-11/12 mx-auto">
             <Helmet>
-                <title>Bistro Boss | All users</title>
+                <title>Bistro Boss | Manage users</title>
             </Helmet>
-            <div className="w-full mx-10">
+            <div className="w-full mx-10 mb-5">
             <h3 className="text-3xl font-semibold my-4">Total Users: {users.length}</h3>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">

@@ -15,7 +15,7 @@ const Class = ({ cla }) => {
         // console.log(item);
         if (user && user.email) {
             const SelectedItem = { SelectedClassId: _id, ClassName, ClassImage, Price, Email: user.email }
-            fetch('http://localhost:5000/selected', {
+            fetch('https://summer-camp-server-six-mu.vercel.app/selected', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -66,11 +66,11 @@ const Class = ({ cla }) => {
                         <p>Instructor Email: {InstructorEmail}</p>
                     </div>
                 </div>
-                <p className='justify-center card-title'>Price: {Price}</p>
+                <p className='justify-center card-title mt-5'>Price: ${Price}</p>
                 {
                     AvailableSeats > 0 ?
                         <div className="card-actions justify-end">
-                            <button onClick={() => handleSelect(cla)} className="btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400 mt-4">Select</button>
+                            <button onClick={() => handleSelect(cla)} className="btn btn-outline text-orange-400 bg-slate-200 border-0 border-b-4 border-r-4 border-orange-400 mt-4">Select</button>
                         </div> :
                         <div className="card-actions justify-end">
                             <button disabled={true} onClick={() => handleSelect(cla)} className="btn btn-outline mt-4">Select</button>

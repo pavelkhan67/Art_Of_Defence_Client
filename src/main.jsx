@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import './index.css'
 import { router } from './Routes/Routes.jsx';
+import { AnimatePresence } from "framer-motion";
 
 import {
   QueryClient,
@@ -18,14 +19,16 @@ const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <div className='w-11/12 mx-auto'>
-            <RouterProvider router={router} />
-          </div>
-        </QueryClientProvider>
-      </HelmetProvider>
-    </AuthProvider>
+    <AnimatePresence>
+      <AuthProvider>
+        <HelmetProvider>
+          <QueryClientProvider client={queryClient}>
+            <div className='w-11/12 mx-auto'>
+              <RouterProvider router={router} />
+            </div>
+          </QueryClientProvider>
+        </HelmetProvider>
+      </AuthProvider>
+    </AnimatePresence>
   </React.StrictMode>,
 )

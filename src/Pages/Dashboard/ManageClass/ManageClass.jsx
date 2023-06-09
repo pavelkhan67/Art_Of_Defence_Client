@@ -7,14 +7,14 @@ const ManageClass = () => {
     const { data: classes = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['addedclass'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/addedclass');
+            const res = await fetch('https://summer-camp-server-six-mu.vercel.app/addedclass');
             return res.json();
         }
     })
     const ManageClass = classes;
 
     const handleApprove = item =>{
-        fetch(`http://localhost:5000/addedclass/approve/${item._id}`, {
+        fetch(`https://summer-camp-server-six-mu.vercel.app/addedclass/approve/${item._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -32,7 +32,7 @@ const ManageClass = () => {
         })
     }
     const handleDeny = item =>{
-        fetch(`http://localhost:5000/addedclass/deny/${item._id}`, {
+        fetch(`https://summer-camp-server-six-mu.vercel.app/addedclass/deny/${item._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

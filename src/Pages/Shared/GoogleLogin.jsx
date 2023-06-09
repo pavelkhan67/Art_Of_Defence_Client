@@ -16,7 +16,7 @@ const GoogleLogin = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://summer-camp-server-six-mu.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -41,7 +41,7 @@ const GoogleLogin = () => {
         <div>
             <div className="divider">OR</div>
             <div className='text-center pb-5'>
-                <button onClick={handleGoogleLogin} className="btn btn-warning btn-outline"> Google
+                <button onClick={handleGoogleLogin} className="btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400"> Google
                 </button>
             </div>
         </div>

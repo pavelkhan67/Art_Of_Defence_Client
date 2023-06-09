@@ -18,7 +18,7 @@ const Payment = () => {
     // console.log(SingleClass, Price);
 
     const handlePay = (SingleClass) => {
-        fetch(`http://localhost:5000/selected/${SingleClass._id}`, {
+        fetch(`https://summer-camp-server-six-mu.vercel.app/selected/${SingleClass._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

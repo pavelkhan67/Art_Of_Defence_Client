@@ -19,7 +19,7 @@ const Footer = () => {
                     <p>Location: Dhaka, Bangladesh</p>
                     <p>Contact Us: </p>
                     <p>Email: abc@gmail.com</p>
-                    <p>Call: +00000000000</p>
+                    <p>Call: +88 0000000000</p>
 
                 </div>
             </div>

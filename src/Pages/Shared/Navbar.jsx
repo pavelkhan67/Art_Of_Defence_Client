@@ -50,8 +50,6 @@ const Navbar = () => {
             </NavLink> : ''
 
         }
-
-        <li><NavLink to="/contact">Contact Us</NavLink></li>
     </>
 
     return (
@@ -63,11 +61,13 @@ const Navbar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu z-10 menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52">
-                            <label className="swap swap-rotate mx-2">
-                                <input onClick={toggleTheme} type="checkbox" />
-                                <div className="swap-on bg-white text-black rounded-full p-1 font-semibold">LIGHT</div>
-                                <div className="swap-off bg-black text-white rounded-full p-1 font-semibold">DARK</div>
-                            </label>
+                            <div className='tooltip tooltip-right mx-2 my-auto' data-tip='Theme'>
+                                <label className="swap swap-rotate">
+                                    <input onClick={toggleTheme} type="checkbox" />
+                                    <div className="swap-on bg-white text-black rounded-full p-1 font-semibold">LIGHT</div>
+                                    <div className="swap-off bg-black text-white rounded-full p-1 font-semibold">DARK</div>
+                                </label>
+                            </div>
                             {navOptions}
                         </ul>
                     </div>
@@ -78,11 +78,13 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <label className="swap swap-rotate mx-2">
-                            <input onClick={toggleTheme} type="checkbox" />
-                            <div className="swap-on bg-white text-black rounded-full p-1 font-semibold">LIGHT</div>
-                            <div className="swap-off bg-black text-white rounded-full p-1 font-semibold">DARK</div>
-                        </label>
+                        <div className='tooltip tooltip-left mx-2 my-auto' data-tip='Theme'>
+                            <label className="swap swap-rotate">
+                                <input onClick={toggleTheme} type="checkbox" />
+                                <div className="swap-on bg-white text-black rounded-full p-1 font-semibold">LIGHT</div>
+                                <div className="swap-off bg-black text-white rounded-full p-1 font-semibold">DARK</div>
+                            </label>
+                        </div>
                         {navOptions}
                     </ul>
                 </div>
@@ -96,9 +98,9 @@ const Navbar = () => {
                                     </div>
                                 </label></button>
                             </div>
-                            <button onClick={handleLogOut} className='btn btn-warning bg-slate-700 btn-outline border-0 border-b-4 border-r-4 normal-case text-base'><span className='text-white'>Log Out</span></button>
+                            <button onClick={handleLogOut} className='btn bg-slate-700 btn-outline border-0 border-b-4 border-r-4 normal-case border-orange-400'><span className='text-white'>Log Out</span></button>
 
-                        </> : <> <NavLink to="/login"><button className='btn btn-warning btn-outline  normal-case text-base'><span className='text-white'>Login</span></button></NavLink> </>
+                        </> : <> <NavLink to="/login"><button className='btn bg-slate-700 btn-outline border-0 border-b-4 border-r-4 normal-case border-orange-400'><span className='text-orange-400'>Login</span></button></NavLink> </>
                     }
                 </div>
             </div>

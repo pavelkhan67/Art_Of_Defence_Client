@@ -26,7 +26,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://summer-camp-server-six-mu.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -112,10 +112,10 @@ const SignUp = () => {
                                 {errors.password && <span className="text-warning">Password is required</span>}
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Sign Up" />
+                                <input className="btn btn-outline text-orange-400 bg-slate-100 border-0 border-b-4 border-r-4 border-orange-400" type="submit" value="Sign Up" />
                             </div>
                             <p className='text-error pb-5 text-center'>{error}</p>
-                            <p><small>Already have an account?  <NavLink to="/login"><span className="text-warning underline">Login</span></NavLink></small></p>
+                            <p><small>Already have an account?  <NavLink to="/login"><span className="text-orange-400 underline">Login</span></NavLink></small></p>
                         </form>
                         <GoogleLogin></GoogleLogin>
                     </div>
