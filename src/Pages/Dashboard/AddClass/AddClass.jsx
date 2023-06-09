@@ -27,7 +27,7 @@ const AddClass = () => {
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
                     const { name, price, insname, insemail, aseat, tstudent, status } = data;
-                    const newItem = { name, price: parseFloat(price), image: imgURL, instructorName: insname, instructorEmail: insemail, availableSeat: aseat, totalStudent: tstudent, status }
+                    const newItem = { ClassName: name, Price: parseFloat(price), ClassImage: imgURL, InstructorName: insname, InstructorEmail: insemail, AvailableSeats: aseat, TotalStudents: tstudent, status }
                     // console.log(newItem)
                     axiosSecure.post('/addedclass', newItem)
                         .then(data => {
@@ -47,12 +47,12 @@ const AddClass = () => {
 
     };
 
-
     return (
         <div className="w-full px-10">
             <Helmet>
                 <title>Art Of Defense | Add a Class</title>
             </Helmet>
+            <h2 className='text-center text-4xl font-semibold pb-6'>Add A Class</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex my-4'>
                     <div className="form-control w-full ">
@@ -127,7 +127,7 @@ const AddClass = () => {
                     </div>
                 </div>
 
-                <input className="btn btn-warning w-1/3 mx-auto form-control mt-4 mb-2 " type="submit" value="Add Item" />
+                <input className="btn btn-warning w-1/3 mx-auto form-control mt-4 mb-2 " type="submit" value="Add Class" />
             </form>
         </div>
     );
