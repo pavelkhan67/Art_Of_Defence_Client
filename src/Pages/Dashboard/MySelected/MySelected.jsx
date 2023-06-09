@@ -13,7 +13,7 @@ const MySelected = () => {
     const handleDelete = item => {
         Swal.fire({
             title: 'Are you sure?',
-            text: `You want to delete ${item.name} ?`,
+            text: `You want to delete ${item.ClassName} ?`,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
