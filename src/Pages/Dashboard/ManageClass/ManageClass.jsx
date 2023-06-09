@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 const ManageClass = () => {
     const { data: classes = [], isLoading: loading, refetch } = useQuery({
@@ -11,9 +12,46 @@ const ManageClass = () => {
         }
     })
     const ManageClass = classes;
-    console.log(ManageClass);
+
+    const handleApprove = item =>{
+        fetch(`http://localhost:5000/addedclass/approve/${item._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    icon: 'success',
+                    title: `${item.ClassName} is Approved!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+    const handleDeny = item =>{
+        fetch(`http://localhost:5000/addedclass/deny/${item._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    icon: 'success',
+                    title: `${item.ClassName} is Denied!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+
     return (
-        <div className='h-full w-9/12 mx-auto'>
+        <div className='h-full w-11/12 mx-auto'>
             <Helmet>
                 <title>Art Of Defense | Manage Classes</title>
             </Helmet>
@@ -71,10 +109,10 @@ const ManageClass = () => {
                                 <td>${item.Price}</td>
                                 <td>{item.AvailableSeats}</td>
                                 <td>{item.status}</td>
-                                <td>{ item.status === 'deny' || item.status === 'approved' ? <div className="flex flex-col gap-2"><button disabled={true} className="btn btn-sm normal-case">Approve</button> <button disabled={true} className="btn btn-sm normal-case ">Deny</button></div> : 
+                                <td>{ item.status === 'denied' || item.status === 'approved' ? <div className="flex flex-col gap-2"><button disabled={true} className="btn btn-sm normal-case">Approve</button> <button disabled={true} className="btn btn-sm normal-case ">Deny</button></div> : 
                                     <div className=" flex gap-2 flex-col">
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm normal-case bg-orange-600  text-white">Approve</button>   
-                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-sm normal-case bg-orange-600  text-white">Deny</button>   
+                                        <button onClick={() => handleApprove(item)} className="btn btn-sm normal-case bg-orange-600  text-white">Approve</button>   
+                                        <button onClick={() => handleDeny(item)} className="btn btn-sm normal-case bg-orange-600  text-white">Deny</button>   
                                     </div>
                                     }</td>
                             </tr>)

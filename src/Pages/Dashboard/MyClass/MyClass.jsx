@@ -11,7 +11,7 @@ const MyClass = () => {
         }
     })
     const MyClass = classes;
-    console.log(MyClass);
+    
     return (
         <div className='h-full w-9/12 mx-auto'>
             <Helmet>
