@@ -27,7 +27,7 @@ const AddClass = () => {
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
                     const { name, price, insname, insemail, aseat, tstudent, status } = data;
-                    const newItem = { ClassName: name, Price: parseFloat(price), ClassImage: imgURL, InstructorName: insname, InstructorEmail: insemail, AvailableSeats: aseat, TotalStudents: tstudent, status }
+                    const newItem = { ClassName: name, Price: parseFloat(price), ClassImage: imgURL, InstructorName: insname, InstructorEmail: insemail, AvailableSeats: parseFloat(aseat), TotalStudents: parseFloat(tstudent), status }
                     // console.log(newItem)
                     axiosSecure.post('/addedclass', newItem)
                         .then(data => {
@@ -99,7 +99,7 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text">Available Seats*</span>
                         </label>
-                        <input type="text" defaultValue={40}
+                        <input type="number" defaultValue={40}
                             {...register("aseat", { required: true, maxLength: 10 })}
                             className="input input-bordered w-full " />
                     </div>
@@ -107,7 +107,7 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text">Total Students*</span>
                         </label>
-                        <input type="text" value={0}
+                        <input type="number" value={0}
                             {...register("tstudent", { required: true, maxLength: 80 })}
                             className="input input-bordered w-full " />
                     </div>
