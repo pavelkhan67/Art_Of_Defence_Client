@@ -40,7 +40,7 @@ const MyClass = () => {
                     </thead>
                     <tbody>
                         {
-                            classes.map((item, index) => <tr
+                            MyClass.map((item, index) => <tr
                                 key={item._id}
                             >
                                 <td>
@@ -54,7 +54,7 @@ const MyClass = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    {item.className}
+                                    {item.ClassName}
                                 </td>
                                 <td>${item.Price}</td>
                                 <td>{item.TotalStudents}</td>

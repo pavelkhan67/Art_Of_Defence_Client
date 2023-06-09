@@ -18,7 +18,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import ManageClass from "../Pages/Dashboard/ManageClass/ManageClass";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import InstructorRoute from "./InstructorRoute";
-import MyClass from "../Pages/Dashboard/AddClass/MyClass/MyClass";
+import MyClass from "../Pages/Dashboard/MyClass/MyClass";
 
 export const router = createBrowserRouter([
     {

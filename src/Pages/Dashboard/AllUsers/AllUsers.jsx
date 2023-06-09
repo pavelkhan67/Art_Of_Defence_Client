@@ -105,10 +105,10 @@ const AllUsers = () => {
                                 <td>{
                                         user.role === 'admin' ? 'admin' : user.role === 'instructor' ? 'instructor' : user.role = 'student'
                                     }</td>
-                                <td>{ user.role === 'admin' || user.role === 'instructor' ? <div className="flex flex-col gap-2"><button disabled={true} className="btn btn-ghost normal-case bg-orange-600  text-white">Make Admin</button> <button disabled={true} className="btn btn-ghost normal-case bg-orange-600  text-white">Make Instructor</button></div> : 
+                                <td>{ user.role === 'admin' || user.role === 'instructor' ? <div className="flex flex-col gap-2"><button disabled={true} className="btn btn-sm normal-case ">Make Admin</button> <button disabled={true} className="btn btn-sm normal-case ">Make Instructor</button></div> : 
                                     <div className=" flex gap-2 flex-col">
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost normal-case bg-orange-600  text-white">Make Admin</button>   
-                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost normal-case bg-orange-600  text-white">Make Instructor</button>   
+                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm normal-case bg-orange-600  text-white">Make Admin</button>   
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-sm normal-case bg-orange-600  text-white">Make Instructor</button>   
                                     </div>
                                     }</td>
                                 <td><button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
